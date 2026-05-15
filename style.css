@@ -681,7 +681,7 @@ nav .container ul li a:hover::before {
 #testimonials #slider #track figure .client img {
   display: inline-block;
   border-radius: 50%;
-  background-color: rgba(0, 0, 255, 0.726);
+  background-color: rgba(0, 0, 255, 0.027);
   height: 60px;
   width: 60px;
 }

@@ -52,7 +52,7 @@ p {
   /* height: 100vh; */
   aspect-ratio: 1/1;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.226);
+  background-color: rgba(0, 0, 255, 0.027);
   border-radius: 50%;
   margin: auto;
   border: 10px solid rgba(0, 0, 255, 1);
@@ -165,7 +165,7 @@ p {
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
-    url("/images/coding.jpg");
+    url("../images/coding.jpg");
 }
 #hobbies .two {
   grid-column: 3;
@@ -174,28 +174,28 @@ p {
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
-    url("/images/photography.jpg");
+    url("../images/photography.jpg");
 }
 #hobbies .three {
   grid-column: 1;
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
-    url("/images/travelling.jpg");
+    url("../images/travelling.jpg");
 }
 #hobbies .four {
   grid-column: 2;
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
-    url("/images/cooking.jpg");
+    url("../images/cooking.jpg");
 }
 #hobbies .five {
   grid-column: 1;
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
-    url("/images/gaming.jpg");
+    url("../images/gaming.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -206,7 +206,7 @@ p {
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
-    url("/images/reading.jpg");
+    url("../images/reading.jpg");
 }
 
 @media screen and (max-width: 800px) {
@@ -267,7 +267,7 @@ p {
   height: 100px;
   object-fit: contain;
   margin-bottom: 10px;
-  background-color: teal;
+  background-color: rgba(0, 0, 255, 0.027);
 }
 
 #hobbies .hobby p {
