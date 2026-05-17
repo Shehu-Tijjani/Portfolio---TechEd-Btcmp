@@ -44,10 +44,8 @@ p {
 .lg-text {
   text-align: center;
   margin-bottom: 50px;
-}
-
-.lg-text {
   font-size: 50px;
+  font-size: clamp(40px, 6vw, 50px);
 }
 
 .lg-text span {
@@ -230,6 +228,10 @@ nav .container ul li a:hover::before {
   }
 }
 
+#hero #details h3 {
+  font-size: clamp(1px, 3vw, 19px);
+}
+
 #hero #details h3 span {
   font-size: 25px;
 }
@@ -254,7 +256,8 @@ nav .container ul li a:hover::before {
 #hero #details p {
   margin-bottom: 40px;
   max-width: 600px;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(16px, 2vw, 18px);
 }
 
 #hero #details #btn-wrapper {
@@ -270,7 +273,6 @@ nav .container ul li a:hover::before {
   min-width: max-content;
   padding: 13px 35px;
   border: 2px solid blue;
-  outline: 4px solid #fff;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
@@ -687,14 +689,33 @@ nav .container ul li a:hover::before {
 }
 
 footer {
-  background-color: rgba(0, 0, 255, 0.027);
-  /* color: #fff; */
+  background-color: rgb(248, 248, 253);
+  position: relative;
+  z-index: 4;
+  max-height: 100vh;
 }
 
 footer #top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 255, 0.103);
+  padding-bottom: 30px;
+}
+
+footer #top h3 {
+  font-size: clamp(25px, 4vw, 30px);
+}
+
+footer p {
+  font-size: 15px;
+}
+
+footer #btn {
+  padding: 13px 35px;
+  border: 2px solid blue;
+  border-radius: 50px;
+  transition: all 0.3s ease;
 }
 
 footer #middle {
@@ -702,6 +723,11 @@ footer #middle {
   flex-wrap: wrap;
   gap: 50px;
   padding: 60px 0;
+}
+
+footer #btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
 }
 
 footer #middle #left {
@@ -718,12 +744,8 @@ footer #middle #right {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   line-height: 3;
-}
-
-footer #middle #right #news-mail {
-  margin-right:;
 }
 
 footer #middle li {
@@ -738,8 +760,23 @@ footer #middle a:hover {
   color: blue;
 }
 
+footer #middle #news-mail {
+}
+
+footer #middle #news-mail input {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 255, 0.103);
+  border-radius: 5px;
+  outline: none;
+}
+footer #middle #news-mail input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
 footer #bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 10px;
+  flex-wrap: wrap;
 }
