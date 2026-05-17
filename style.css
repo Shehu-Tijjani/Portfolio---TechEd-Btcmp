@@ -445,10 +445,22 @@ nav .container ul li a:hover::before {
 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  position: relative;
+}
+
+#services #scroll-track::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: blue;
+  height: 2px;
+  width: calc(400px * 6);
+  z-index: -1;
 }
 
 #services #scroll-track .service {
-  flex: 1 0 90vw;
+  flex: 1 0 85vw;
   min-width: 200px;
   max-width: 400px;
 
@@ -458,6 +470,7 @@ nav .container ul li a:hover::before {
   border: 15px solid rgba(0, 0, 255, 0.017);
   outline: 1px solid rgba(0, 0, 255, 0.068);
   outline-offset: -15px;
+  background-color: white;
 
   scroll-snap-align: center;
 }
