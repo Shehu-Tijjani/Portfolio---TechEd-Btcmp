@@ -88,7 +88,7 @@ nav .container {
 
 @media screen and (max-width: 700px) {
   nav .container {
-    max-height: 80px;
+    max-height: 70px;
     padding: 18px;
     transition: max-height 0.3s ease-in-out;
   }
@@ -99,9 +99,9 @@ nav .container {
 }
 
 #logo {
-  font-size: 40px;
   font-weight: 900;
   line-height: 1;
+  font-size: 30px;
 }
 
 #logo span {
@@ -229,7 +229,7 @@ nav .container ul li a:hover::before {
 }
 
 #hero #details h3 {
-  font-size: clamp(1px, 3vw, 19px);
+  font-size: clamp(16px, 3vw, 19px);
 }
 
 #hero #details h3 span {
