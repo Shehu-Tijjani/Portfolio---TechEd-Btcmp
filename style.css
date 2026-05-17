@@ -42,7 +42,7 @@ p {
 }
 
 .btn {
-  padding: 10px 35px;
+  padding: 13px 35px;
   border: 2px solid blue;
   color: blue;
   border-radius: 50px;
@@ -138,13 +138,18 @@ nav .container {
     overflow: hidden;
     cursor: pointer;
     display: flex;
+  }
+
+  #hamburger-icon:hover {
     fill: blue;
   }
+
   #open,
   #close {
     flex: 0 0 100%;
     transition: transform 0.3s ease;
   }
+
   nav:has(#toggle:checked) #open,
   nav:has(#toggle:checked) #close {
     transform: translateX(-100%);
@@ -280,7 +285,7 @@ nav .container ul li a:hover::before {
 #hero #details #btn-wrapper {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 20px;
+  column-gap: 10px;
   row-gap: 10px;
   max-width: max-content;
 }
@@ -375,7 +380,6 @@ nav .container ul li a:hover::before {
 #metrics .container {
   padding: 30px 50px;
   transform: translateY(-70px);
-  width: 100%;
   width: 80%;
   max-width: 1200px;
   box-shadow: 0 5px 15px rgba(0, 0, 255, 0.05);
@@ -425,42 +429,43 @@ nav .container ul li a:hover::before {
 }
 
 #services .lg-text {
-  flex: 1;
-  min-width: 300px;
+  flex: 0.5 1 300px;
   text-align: left;
   margin: 0;
   padding: 15px 0;
 }
 
-#services #scroller {
-  flex: 800px;
-  overflow-x: scroll;
-  padding: 15px 0;
-}
-
 #services #scroll-track {
+  flex: 2 1 800px;
+  padding: 15px 0;
+
   display: flex;
   gap: 30px;
-  width: max-content;
+  overflow-x: scroll;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 #services #scroll-track .service {
+  flex: 1 0 90vw;
+  min-width: 200px;
   max-width: 400px;
-  width: 85vw;
+
   padding: 40px;
   text-align: center;
   border-radius: 40px;
   border: 15px solid rgba(0, 0, 255, 0.017);
   outline: 1px solid rgba(0, 0, 255, 0.068);
   outline-offset: -15px;
+
+  scroll-snap-align: center;
 }
 
 #services #scroll-track .service .icon {
-  /* padding: 35px; */
   display: inline-block;
   border-radius: 50%;
   margin-bottom: 10px;
-  /* background-color: rgba(0, 0, 255, 0.103); */
 }
 
 #services #scroll-track .service .icon img {
@@ -701,8 +706,6 @@ footer {
   background-color: rgb(248, 248, 253);
   position: relative;
   z-index: 4;
-  max-height: 100vh;
-  min-height: max-content;
 }
 
 footer .container {
@@ -763,6 +766,7 @@ footer #middle #right {
 
 footer #middle h3 {
   color: blue;
+  font-weight: 600;
 }
 
 footer #middle li {
@@ -782,12 +786,13 @@ footer #middle #news-mail {
 
 footer #middle #news-mail input {
   padding: 10px;
-  border: 1px solid rgba(0, 0, 255, 0.103);
+  border: 1px solid rgba(0, 0, 255, 0.3);
+  border: none;
   border-radius: 5px;
   outline: none;
-  outline: 1px solid rgb(0, 0, 255);
 }
-footer #middle #news-mail input: {
+footer #middle #news-mail input:focus {
+  outline: 1px solid rgb(0, 0, 255);
 }
 
 footer #middle #news-mail input::placeholder {
