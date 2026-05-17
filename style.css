@@ -120,6 +120,8 @@ nav .container {
 
 #logo span {
   color: blue;
+  font-size: 40px;
+  line-height: 0.5;
 }
 
 #toggle {
@@ -136,6 +138,7 @@ nav .container {
     overflow: hidden;
     cursor: pointer;
     display: flex;
+    fill: blue;
   }
   #open,
   #close {
@@ -718,13 +721,14 @@ footer #top {
 }
 
 footer #top h3 {
-  font-size: clamp(25px, 4vw, 30px);
+  font-size: clamp(25px, 8vw, 30px);
 }
 
-footer #btn {
-  padding: 10px 35px;
-  border: 2px solid blue;
-  border-radius: 50px;
+footer #top .btn {
+}
+
+footer #top h3 span {
+  color: blue;
 }
 
 footer p {
@@ -738,13 +742,8 @@ footer #middle {
   padding: 60px 0;
 }
 
-footer #btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.2);
-}
-
 footer #middle #left {
-  flex: 1 1 400px;
+  flex: 0.3 1 400px;
   margin-right: auto;
 }
 
@@ -754,11 +753,16 @@ footer #middle #left #logo {
 
 footer #middle #right {
   flex: 2 1 max-content;
+  max-width: 800px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
   line-height: 3;
+}
+
+footer #middle h3 {
+  color: blue;
 }
 
 footer #middle li {
@@ -781,7 +785,11 @@ footer #middle #news-mail input {
   border: 1px solid rgba(0, 0, 255, 0.103);
   border-radius: 5px;
   outline: none;
+  outline: 1px solid rgb(0, 0, 255);
 }
+footer #middle #news-mail input: {
+}
+
 footer #middle #news-mail input::placeholder {
   font-family: "Poppins", sans-serif;
 }
