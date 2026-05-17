@@ -695,6 +695,10 @@ footer {
   max-height: 100vh;
 }
 
+footer .container {
+  padding: 30px 20px;
+}
+
 footer #top {
   display: flex;
   justify-content: space-between;
