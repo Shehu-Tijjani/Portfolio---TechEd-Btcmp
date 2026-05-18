@@ -127,7 +127,19 @@ nav .container {
 #toggle {
   display: none;
 }
+
 #hamburger-icon {
+  display: none;
+}
+
+#hamburger-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  z-index: 3;
   display: none;
 }
 
@@ -139,7 +151,6 @@ nav .container {
     cursor: pointer;
     display: flex;
   }
-
   #hamburger-icon:hover {
     fill: blue;
   }
@@ -153,6 +164,10 @@ nav .container {
   nav:has(#toggle:checked) #open,
   nav:has(#toggle:checked) #close {
     transform: translateX(-100%);
+  }
+
+  body:has(#toggle:checked) #hamburger-overlay {
+    display: block;
   }
 }
 
@@ -453,7 +468,7 @@ nav .container ul li a:hover::before {
   position: absolute;
   top: 50%;
   left: 0;
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.13);
   height: 2px;
   width: calc(400px * 6);
   z-index: -1;
