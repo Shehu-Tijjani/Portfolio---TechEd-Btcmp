@@ -141,6 +141,12 @@ p {
 }
 
 #hobbies {
+  position: relative;
+  z-index: 4;
+  background-color: white;
+}
+
+#hobbies-grid {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(calc(220px + 18%), 1fr));
     grid-template-columns: repeat(auto-fit, minmax(calc(170px + 15%), 1fr)); */
@@ -149,7 +155,7 @@ p {
   gap: 30px;
 }
 
-#hobbies .hobby {
+#hobbies-grid .hobby {
   background-color: rgba(0, 0, 255, 0.027);
   border-radius: 20px;
   padding: 10px 30px;
@@ -159,7 +165,7 @@ p {
   background-size: cover;
 }
 
-#hobbies .one {
+#hobbies-grid .one {
   grid-column-start: 1;
   grid-column-end: 3;
 
@@ -167,7 +173,7 @@ p {
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
     url("../images/coding.jpg");
 }
-#hobbies .two {
+#hobbies-grid .two {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
@@ -176,21 +182,21 @@ p {
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
     url("../images/photography.jpg");
 }
-#hobbies .three {
+#hobbies-grid .three {
   grid-column: 1;
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
     url("../images/travelling.jpg");
 }
-#hobbies .four {
+#hobbies-grid .four {
   grid-column: 2;
 
   background-image:
     linear-gradient(to bottom right, rgba(0, 0, 255, 0.39), transparent 40%),
     url("../images/cooking.jpg");
 }
-#hobbies .five {
+#hobbies-grid .five {
   grid-column: 1;
 
   background-image:
@@ -200,7 +206,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#hobbies .six {
+#hobbies-grid .six {
   grid-column-start: 2;
   grid-column-end: 4;
 
@@ -210,60 +216,60 @@ p {
 }
 
 @media screen and (max-width: 800px) {
-  #hobbies {
+  #hobbies-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  #hobbies .one {
+  #hobbies-grid .one {
     grid-row: auto;
     grid-column: auto;
   }
-  #hobbies .two {
+  #hobbies-grid .two {
     grid-column: 2;
     grid-row-start: 1;
     grid-row-end: 3;
   }
-  #hobbies .three {
+  #hobbies-grid .three {
     grid-row: auto;
     grid-column: auto;
   }
-  #hobbies .four {
+  #hobbies-grid .four {
     grid-row: auto;
     grid-column: auto;
   }
-  #hobbies .five {
+  #hobbies-grid .five {
     grid-row: auto;
     grid-column: auto;
   }
-  #hobbies .six {
+  #hobbies-grid .six {
     grid-column-start: 1;
     grid-column-end: 3;
   }
 }
 
 @media screen and (max-width: 550px) {
-  #hobbies {
+  #hobbies-grid {
     grid-template-columns: 1fr;
   }
 
-  #hobbies .two {
+  #hobbies-grid .two {
     grid-row: auto;
     grid-column: auto;
   }
-  #hobbies .six {
+  #hobbies-grid .six {
     grid-row: auto;
     grid-column: auto;
   }
 }
 
-#hobbies .hobby {
+#hobbies-grid .hobby {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   /* display: none; */
 }
 
-#hobbies .hobby p {
+#hobbies-grid .hobby p {
   font-size: 30px;
   color: white;
 }
