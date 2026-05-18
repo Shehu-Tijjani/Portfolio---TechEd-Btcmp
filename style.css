@@ -755,6 +755,9 @@ footer {
 
 footer .container {
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 footer #top {
@@ -766,6 +769,13 @@ footer #top {
   row-gap: 15px;
   border-bottom: 1px solid rgba(0, 0, 255, 0.103);
   padding-bottom: 30px;
+}
+
+@media screen and (max-width: 484px) {
+  footer #top {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 footer #top h3 {
@@ -786,13 +796,14 @@ footer p {
 footer #middle {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  padding: 60px 0;
+  column-gap: 100px;
+  row-gap: 30px;
 }
 
 footer #middle #left {
-  flex: 0.3 1 400px;
+  flex: 1 1 300px;
   margin-right: auto;
+  max-width: 600px;
 }
 
 footer #middle #left #logo {
@@ -800,13 +811,18 @@ footer #middle #left #logo {
 }
 
 footer #middle #right {
-  flex: 2 1 max-content;
-  max-width: 800px;
+  flex: 2.5 1 max-content;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   line-height: 3;
+}
+
+footer #middle #right * {
+  flex: 1 1 max-content;
+}
+
+footer #middle #right div {
 }
 
 footer #middle h3 {
@@ -835,12 +851,12 @@ footer #middle #news-mail #input-wrapper {
 }
 
 footer #middle #news-mail input {
-  padding: 10px;
+  padding: 0 15px;
   border: none;
   border-radius: 5px;
   outline: none;
-  flex: 1;
   font-family: "Poppins", sans-serif;
+  max-width: 350px;
 }
 
 footer #middle #news-mail input:focus {
@@ -854,6 +870,7 @@ footer #middle #news-mail #icon {
   padding: 10px;
   border-radius: 5px;
   line-height: 0;
+  flex: 0;
 }
 
 footer #bottom {
