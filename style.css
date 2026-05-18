@@ -643,8 +643,25 @@ nav .container ul li a:hover::before {
 }
 
 #projects figure .description .top a {
-  border-bottom: 1px solid;
   line-height: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+#projects figure .description .top a:hover {
+  color: blue;
+}
+
+#projects figure .description .top a span {
+  color: blue;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+#projects figure .description .top a:hover span {
+  transform: rotate(45deg);
 }
 
 #testimonials {
@@ -812,19 +829,31 @@ footer #middle a:hover {
 footer #middle #news-mail {
 }
 
+footer #middle #news-mail #input-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
 footer #middle #news-mail input {
   padding: 10px;
-  border: 1px solid rgba(0, 0, 255, 0.3);
   border: none;
   border-radius: 5px;
   outline: none;
-}
-footer #middle #news-mail input:focus {
-  outline: 1px solid rgb(0, 0, 255);
+  flex: 1;
+  font-family: "Poppins", sans-serif;
 }
 
-footer #middle #news-mail input::placeholder {
-  font-family: "Poppins", sans-serif;
+footer #middle #news-mail input:focus {
+  border: 1px solid rgba(0, 0, 255, 0.3);
+}
+
+footer #middle #news-mail #icon {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 0;
 }
 
 footer #bottom {
