@@ -1,274 +1,274 @@
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 p {
-  font-size: 18px;
-  line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 .lg-text {
-  margin-bottom: 20px;
-  text-align: left;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 #about {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 #about .container {
-  padding-top: 180px;
+    padding-top: 180px;
 
-  display: flex;
-  align-items: center;
-  column-gap: 30px;
-  row-gap: 50px;
-  flex-wrap: wrap-reverse;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 50px;
+    flex-wrap: wrap-reverse;
 }
 
 @media screen and (max-width: 969px) {
-  #about .container {
-    padding-top: 120px;
-  }
+    #about .container {
+        padding-top: 120px;
+    }
 }
 
 #about #left {
-  flex: 1 1 450px;
+    flex: 1 1 450px;
 }
 
 #about h2 {
-  /* font-size: 60px; */
+    /* font-size: 60px; */
 }
 
 #about #right {
-  flex: 1 1 450px;
+    flex: 1 1 450px;
 }
 
 #about #image {
-  max-width: 400px;
-  /* 
+    max-width: 400px;
+    /* 
   max-height: 400px; */
-  /* height: 100vh; */
-  aspect-ratio: 1/1;
-  width: 100%;
-  background-color: rgba(0, 0, 255, 0.027);
-  border-radius: 50%;
-  margin: auto;
-  border: 10px solid var(--blue);
-  outline: 1px solid var(--blue);
-  outline-offset: 25px;
-  overflow: hidden;
+    /* height: 100vh; */
+    aspect-ratio: 1/1;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.027);
+    border-radius: 50%;
+    margin: auto;
+    border: 10px solid var(--blue);
+    outline: 1px solid var(--blue);
+    outline-offset: 25px;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 969px) {
-  #about #image {
-    max-width: max-content;
-    aspect-ratio: auto;
-    border-radius: 30px;
-    outline: none;
-  }
+    #about #image {
+        max-width: max-content;
+        aspect-ratio: auto;
+        border-radius: 30px;
+        outline: none;
+    }
 }
 
 #about #image img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: left;
-  display: block;
-  transition: all 0.6s ease;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+    display: block;
+    transition: all 0.6s ease;
 }
 
 #about #image img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 #experience .container {
-  position: relative;
+    position: relative;
 }
 
 #experience #jobs {
-  position: relative;
+    position: relative;
 }
 
 #experience #jobs #sticky-line {
-  position: sticky;
-  margin-left: 30px;
-  top: 40px;
-  width: 3px;
-  height: 400px;
-  margin-top: -400px;
-  background-color: var(--blue);
-  z-index: -2;
+    position: sticky;
+    margin-left: 30px;
+    top: 40px;
+    width: 3px;
+    height: 400px;
+    margin-top: -400px;
+    background-color: var(--blue);
+    z-index: -2;
 }
 
 #experience #jobs::before {
-  content: "";
-  position: absolute;
-  display: block;
-  background-color: var(--white);
-  height: 400px;
-  width: 5px;
-  top: 0;
-  left: 29px;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: var(--white);
+    height: 400px;
+    width: 5px;
+    top: 0;
+    left: 29px;
+    z-index: -1;
 }
 
 #experience #jobs .job {
-  display: flex;
-  align-items: flex-start;
-  gap: clamp(20px, 3vw, 60px);
-  margin-bottom: 60px;
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(20px, 3vw, 60px);
+    margin-bottom: 60px;
 }
 
 #experience #jobs .job h2 {
-  font-size: 60px;
-  background-color: var(--white);
-  line-height: 1.2;
+    font-size: 60px;
+    background-color: var(--white);
+    line-height: 1.2;
 }
 #experience #jobs .job:last-of-type h2 {
-  align-self: stretch;
+    align-self: stretch;
 }
 
 #experience #jobs .job small {
-  color: var(--blue);
+    color: var(--blue);
 }
 
 #experience #jobs .job h3 {
-  font-size: 40px;
-  line-height: 1;
-  margin-bottom: 15px;
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 15px;
 }
 
 #hobbies {
-  position: relative;
-  z-index: 4;
-  background-color: var(--white);
+    position: relative;
+    z-index: 4;
+    background-color: var(--white);
 }
 
 #hobbies-grid {
-  display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(calc(220px + 18%), 1fr));
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(calc(220px + 18%), 1fr));
     grid-template-columns: repeat(auto-fit, minmax(calc(170px + 15%), 1fr)); */
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 300px;
-  gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 300px;
+    gap: 30px;
 }
 
 #hobbies-grid .hobby {
-  background-color: var(--blue-light);
-  border-radius: 20px;
-  padding: 10px 30px;
+    background-color: var(--blue-light);
+    border-radius: 20px;
+    padding: 10px 30px;
 
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #hobbies-grid .one {
-  grid-column-start: 1;
-  grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
-  background-image:
-    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
-    url("../images/coding.jpg");
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
+        url("../images/coding.jpg");
 }
 #hobbies-grid .two {
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
 
-  background-image:
-    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
-    url("../images/photography.jpg");
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
+        url("../images/photography.jpg");
 }
 #hobbies-grid .three {
-  grid-column: 1;
+    grid-column: 1;
 
-  background-image:
-    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
-    url("../images/travelling.jpg");
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
+        url("../images/travelling.jpg");
 }
 #hobbies-grid .four {
-  grid-column: 2;
+    grid-column: 2;
 
-  background-image:
-    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
-    url("../images/cooking.jpg");
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
+        url("../images/cooking.jpg");
 }
 #hobbies-grid .five {
-  grid-column: 1;
+    grid-column: 1;
 
-  background-image:
-    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
-    url("../images/gaming.jpg");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
+        url("../images/gaming.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #hobbies-grid .six {
-  grid-column-start: 2;
-  grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
 
-  background-image:
-    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
-    url("../images/reading.jpg");
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), transparent 40%),
+        url("../images/reading.jpg");
 }
 
 @media screen and (max-width: 800px) {
-  #hobbies-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+    #hobbies-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-  #hobbies-grid .one {
-    grid-row: auto;
-    grid-column: auto;
-  }
-  #hobbies-grid .two {
-    grid-column: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-  #hobbies-grid .three {
-    grid-row: auto;
-    grid-column: auto;
-  }
-  #hobbies-grid .four {
-    grid-row: auto;
-    grid-column: auto;
-  }
-  #hobbies-grid .five {
-    grid-row: auto;
-    grid-column: auto;
-  }
-  #hobbies-grid .six {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
+    #hobbies-grid .one {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    #hobbies-grid .two {
+        grid-column: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #hobbies-grid .three {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    #hobbies-grid .four {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    #hobbies-grid .five {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    #hobbies-grid .six {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
 @media screen and (max-width: 550px) {
-  #hobbies-grid {
-    grid-template-columns: 1fr;
-  }
+    #hobbies-grid {
+        grid-template-columns: 1fr;
+    }
 
-  #hobbies-grid .two {
-    grid-row: auto;
-    grid-column: auto;
-  }
-  #hobbies-grid .six {
-    grid-row: auto;
-    grid-column: auto;
-  }
+    #hobbies-grid .two {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    #hobbies-grid .six {
+        grid-row: auto;
+        grid-column: auto;
+    }
 }
 
 #hobbies-grid .hobby {
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #hobbies-grid .hobby p {
-  font-size: 30px;
-  color: var(--white);
+    font-size: 30px;
+    color: var(--white);
 }
