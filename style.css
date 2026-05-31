@@ -865,7 +865,6 @@ footer #middle #news-mail form {
     display: flex;
     gap: 5px;
     max-width: 400px;
-    padding: 30px 0;
 }
 
 footer #middle #news-mail input {
