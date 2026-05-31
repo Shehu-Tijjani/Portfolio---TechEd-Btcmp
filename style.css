@@ -817,15 +817,22 @@ footer #middle #left #socials {
 
 footer #middle #left #socials a {
     background-color: var(--blue);
+    color: var(--white);
     padding: 5px;
     border-radius: 3px;
+    line-height: 0;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+footer #middle #left #socials a:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    outline: 1px solid var(--blue);
 }
 
 footer #middle #left #socials i {
-    color: var(--white);
-    line-height: 0;
     display: block;
-    text-align: center;
 }
 
 footer #middle #right {
