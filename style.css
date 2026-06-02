@@ -22,7 +22,7 @@ body {
     font-family: "Poppins", sans-serif;
     color: #333;
     line-height: 1.7;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 
 ::-webkit-scrollbar {
@@ -822,7 +822,7 @@ footer #middle #left #socials a {
     border-radius: 3px;
     line-height: 0;
     text-align: center;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 footer #middle #left #socials a:hover {
@@ -889,11 +889,16 @@ footer #middle #news-mail input:focus {
 
 footer #middle #news-mail #icon {
     display: inline-block;
+    border: none;
     background-color: var(--blue);
     color: var(--white);
     padding: 10px;
     border-radius: 5px;
     line-height: 0;
+}
+
+footer #middle #news-mail #icon:hover {
+    opacity: 0.7;
 }
 
 footer #bottom {
