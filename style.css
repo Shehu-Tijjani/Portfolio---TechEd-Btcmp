@@ -761,7 +761,6 @@ footer .container {
 
 footer #top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     column-gap: 30px;
@@ -770,18 +769,19 @@ footer #top {
     padding-bottom: 30px;
 }
 
-@media screen and (max-width: 484px) {
+@media screen and (max-width: 535px) {
     footer #top {
-        justify-content: center;
         text-align: center;
     }
 }
 
 footer #top h3 {
-    font-size: clamp(25px, 8vw, 30px);
+    font-size: clamp(10px, 8vw, 35px);
+    flex: 500 1 max-content;
 }
 
 footer #top .btn {
+    flex: 1 0 max-content;
 }
 
 footer #top h3 span {
