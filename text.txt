@@ -1,0 +1,759 @@
+VIDEO 1 — HTML REVISITED, PROJECT STRUCTURE & CSS FOUNDATIONS
+
+Estimated duration: 18–20 minutes
+
+0:00–0:45 — INTRODUCTION
+
+[SCREEN: Show the finished portfolio website in the browser.]
+
+INSTRUCTOR:
+
+Welcome back.
+
+In this bootcamp, we're going to build one complete project from beginning to end.
+
+And I want to make something very clear from the beginning:
+
+We are not going to build ten tiny projects just to demonstrate ten different CSS properties.
+
+We're going to take this portfolio website and use it as our laboratory.
+
+Every time we learn something new, we're going to have a reason for learning it.
+
+If we need Flexbox, we'll use Flexbox because the portfolio needs a particular layout.
+
+If we need Grid, we'll use Grid because one of our sections actually needs a grid.
+
+If we need media queries, we'll use them because our website has to work on a phone.
+
+And if we need pseudo-elements or animations, we'll use them because they're actually part of the design.
+
+So by the end of this bootcamp, you shouldn't just know what a CSS property means.
+
+You should know when and why to use it.
+
+Let's start by looking at what we're actually building.
+
+0:45–2:00 — UNDERSTANDING THE PROJECT
+
+[SCREEN: Open the project folder in VS Code.]
+
+INSTRUCTOR:
+
+Inside our project, we have something similar to this:
+
+Portfolio/
+│
+├── index.html
+├── style.css
+│
+├── images/
+│   ├── about.jpg
+│   ├── coding.jpg
+│   ├── photography.jpg
+│   ├── travelling.jpg
+│   ├── cooking.jpg
+│   ├── gaming.jpg
+│   ├── reading.jpg
+│   └── projects/
+│
+└── pages/
+    ├── about.html
+    └── about.css
+
+The exact number of files isn't the important part.
+
+What's important is understanding the relationship between them.
+
+index.html is our main page.
+
+about.html is another page.
+
+style.css contains styles that are shared across the website.
+
+And about.css contains styles specifically needed by the About page.
+
+The images folder contains the images and SVG assets we're using.
+
+This is already an important concept.
+
+A website isn't necessarily one giant HTML file with everything inside it.
+
+As projects become larger, we organize our files.
+
+2:00–3:30 — HTML DOCUMENT STRUCTURE
+
+[SCREEN: Open index.html.]
+
+INSTRUCTOR:
+
+Let's quickly revisit the structure of an HTML document.
+
+At the top, we have:
+
+<!doctype html>
+
+This tells the browser that we're using modern HTML.
+
+Then:
+
+<html lang="en">
+
+This is the root element of our document.
+
+Notice that we're not just writing <html>.
+
+We're adding an attribute:
+
+lang="en"
+
+This is an important distinction.
+
+The element is html.
+
+The attribute is lang.
+
+And its value is en.
+
+So whenever you see something like:
+
+something="value"
+
+inside an opening HTML tag, you're probably looking at an attribute.
+
+3:30–4:45 — HEAD AND BODY
+
+[SCREEN: Highlight <head> and <body>.]
+
+INSTRUCTOR:
+
+Inside our HTML document, we have two major areas:
+
+The head and the body.
+
+The head contains information about the page that isn't normally displayed as the page's main content.
+
+For example:
+
+<meta charset="UTF-8">
+
+This tells the browser what character encoding we're using.
+
+Then:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+This becomes particularly important when we're building responsive websites.
+
+It tells the browser how the page should behave on different screen sizes.
+
+We also have our title:
+
+<title>About Me</title>
+
+And we'll eventually connect our CSS here.
+
+The body, on the other hand, contains the actual content users see.
+
+4:45–6:30 — SEMANTIC HTML
+
+[SCREEN: Scroll through the portfolio HTML.]
+
+INSTRUCTOR:
+
+Now let's look at something important.
+
+This website doesn't consist entirely of <div> elements.
+
+We have:
+
+<header>
+<nav>
+<section>
+<footer>
+
+We also have things like:
+
+<figure>
+<ul>
+<li>
+<form>
+
+These are examples of semantic HTML.
+
+Semantic means that the element communicates something about the meaning or purpose of its content.
+
+For example:
+
+<nav>
+
+tells us:
+
+“This area contains navigation.”
+
+A:
+
+<footer>
+
+tells us:
+
+“This is the footer of the page.”
+
+And:
+
+<section>
+
+helps us divide the document into meaningful sections.
+
+Now compare this:
+
+<div>
+    <div>
+        <div>
+            Home
+        </div>
+    </div>
+</div>
+
+with:
+
+<nav>
+    <ul>
+        <li>
+            <a href="#">Home</a>
+        </li>
+    </ul>
+</nav>
+
+The second version gives us much more information about what the content actually represents.
+
+So here's a rule:
+
+Use a semantic element when one exists and makes sense.
+
+Don't use <div> for absolutely everything.
+
+A <div> is still useful — very useful, actually — but it doesn't have a specific semantic meaning.
+
+6:30–8:15 — IDS AND CLASSES
+
+[SCREEN: Highlight examples such as id="projects" and class="container".]
+
+INSTRUCTOR:
+
+Now we're getting into something particularly important for CSS.
+
+You'll notice things like:
+
+<section id="projects">
+
+and:
+
+<div class="container">
+
+These are attributes.
+
+But they're special attributes that we're going to use heavily with CSS.
+
+Let's start with id.
+
+An ID identifies a particular element.
+
+For example:
+
+<section id="projects">
+
+We're basically saying:
+
+“This section is the projects section.”
+
+Then we have classes:
+
+<div class="container">
+
+A class is useful when multiple elements share a particular characteristic or style.
+
+For example, our website has several elements using:
+
+class="container"
+
+because they all need similar layout behavior.
+
+This is an important distinction:
+
+An ID identifies a particular element.
+
+A class describes a reusable group or characteristic.
+
+You'll see us using both throughout the project.
+
+8:15–9:30 — WHY WE NEED CLASSES FOR CSS
+
+[SCREEN: Create a quick example.]
+
+INSTRUCTOR:
+
+Imagine we have:
+
+<p class="description">Hello</p>
+<p class="description">Welcome</p>
+<p class="description">Goodbye</p>
+
+We can style all three using:
+
+.description {
+    color: blue;
+}
+
+That's one of the powers of classes.
+
+Now suppose we have:
+
+<h1 id="hero-title">I'm Tijjani</h1>
+
+We could target that specific element with:
+
+#hero-title {
+    color: blue;
+}
+
+Notice the difference.
+
+A class selector starts with:
+
+.
+
+An ID selector starts with:
+
+#
+
+So:
+
+.description
+
+targets a class.
+
+And:
+
+#hero-title
+
+targets an ID.
+
+We'll go much deeper into selectors and specificity in the next video.
+
+For now, just understand the relationship.
+
+HTML gives an element an identity.
+
+CSS uses that identity to find and style the element.
+
+9:30–10:45 — CONNECTING CSS TO HTML
+
+[SCREEN: Open the <head> of index.html.]
+
+INSTRUCTOR:
+
+Now let's connect our CSS.
+
+We use:
+
+<link rel="stylesheet" href="style.css">
+
+The link element tells the browser that we're connecting another resource to this document.
+
+And:
+
+rel="stylesheet"
+
+tells the browser what that resource is.
+
+Then:
+
+href="style.css"
+
+tells it where the CSS file is located.
+
+This is an external stylesheet.
+
+And this is the approach we'll primarily use in this project.
+
+10:45–12:00 — INLINE, INTERNAL AND EXTERNAL CSS
+
+[SCREEN: Demonstrate three examples.]
+
+INSTRUCTOR:
+
+There are three common ways you can write CSS.
+
+First, inline CSS:
+
+<h1 style="color: blue; font-size: 40px;">Hello</h1>
+
+The styling is written directly inside the HTML element.
+
+Now, i would have said that you can use this whenever you have just a few styles to apply to an element, however i advice you against it as no one does this anymore and its a best practice, meaning its strongly encouraged to leave your CSS completely out of your elements to keep both separate and tidy.
+
+Second, internal CSS:
+
+<style>
+    h1 {
+        color: blue;
+    }
+</style>
+
+So as you can see, The CSS styles is written inside the HTML document, however within the head element, hence the name "Internal CSS". This can be used for small projects that would'nt cause your html document to look rough or too out of concern..
+
+And thirdly, we have the External CSS:
+
+The first thing you want to do to apply External CSS to your html elements is this.
+
+<link rel="stylesheet" href="style.css">
+
+so we have a void element called the link element, and we have an attribute "rel" with a value of "stylesheet" which tells the browser that, once it starts to read your code to display it on your screen, Treat this as a link that links or connects a stylesheet to this document. but how does it know which stylesheet it is to link?, that is where the href attribute comes in, so the href attribute takes a value that tells the location of the stylesheet where the intended styles for the document exists.
+
+Now, the external CSS is referenced within the head element of our html document, however the actual styles exists inside style.css therefore outside or external to our html document and both are married or connected using the link element.
+
+For a serious multi-section project like this, external CSS is usually the cleanest approach.
+
+Why?
+
+Because HTML should primarily describe the structure and content.
+
+CSS should handle presentation.
+
+We don't want our HTML filled with hundreds of inline styles.
+
+We want separation of responsibilities.
+
+HTML asks the question:
+
+What is this?
+
+And CSS asks:
+
+How should it look?
+
+That's the mental model I want you to develop.
+
+12:00–13:15 — CSS SYNTAX
+
+[SCREEN: Open style.css.]
+
+INSTRUCTOR:
+
+Now let's look at the basic structure of CSS.
+
+Here's an example from our project:
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+This has three important parts.
+
+First:
+
+body
+
+That's the selector.
+
+We're saying:
+
+“Find the body element.”
+
+Then we have the declaration block:
+
+{
+    ...
+}
+
+Inside it, we have declarations.
+
+For example:
+
+color: #333;
+
+The property is:
+
+color
+
+The value is:
+
+#333
+
+And the semicolon marks the end of the declaration.
+
+So:
+
+property: value;
+
+is the basic pattern.
+
+You'll be writing this thousands of times throughout your CSS career.
+
+13:15–14:30 — THE UNIVERSAL SELECTOR AND RESET
+
+[SCREEN: Highlight the beginning of style.css.]
+
+INSTRUCTOR:
+
+At the beginning of our stylesheet, we have:
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+The * is called the universal selector.
+
+It targets essentially every element.
+
+We're using it here to establish some predictable defaults.
+
+Browsers come with their own default styles.
+
+For example, headings have default margins.
+
+Lists have default padding and bullets.
+
+And many elements behave slightly differently from the clean starting point we want.
+
+So we use a basic reset.
+
+The first two declarations:
+
+margin: 0;
+padding: 0;
+
+remove the default margin and padding.
+
+Then:
+
+box-sizing: border-box;
+
+is extremely important.
+
+We're going to spend much more time on the box model later, but for now, understand this:
+
+It makes sizing elements much easier and more predictable.
+
+14:30–15:45 — CSS VARIABLES
+
+[SCREEN: Highlight :root.]
+
+INSTRUCTOR:
+
+Now look at the very top of our stylesheet.
+
+We have:
+
+:root {
+    --blue: blue;
+    --blue-light: rgba(0, 0, 255, 0.1);
+    --blue-lighter: rgba(0, 0, 255, 0.07);
+    --blue-lightest: rgba(0, 0, 255, 0.03);
+    --white: white;
+}
+
+This introduces another powerful concept:
+
+CSS custom properties, commonly called CSS variables.
+
+For example:
+
+--blue: blue;
+
+We're creating a reusable value called --blue.
+
+Then elsewhere we can write:
+
+color: var(--blue);
+
+Instead of repeatedly writing:
+
+color: blue;
+
+And if we later decide our primary color should be something else, we can change it in one place.
+
+This is one of the first steps toward writing maintainable CSS.
+
+Think of it as creating our website's design tokens.
+
+15:45–17:00 — BASIC SELECTORS
+
+[SCREEN: Create examples in the CSS file.]
+
+INSTRUCTOR:
+
+Before we move further, let's establish the basic selectors you'll see throughout this project.
+
+Element selector:
+
+p {
+    font-size: 17px;
+}
+
+This targets paragraph elements.
+
+Class selector:
+
+.container {
+    max-width: 1500px;
+}
+
+This targets elements with the container class.
+
+ID selector:
+
+#projects {
+    ...
+}
+
+This targets the element with the projects ID.
+
+And we can combine selectors.
+
+For example:
+
+#projects figure {
+    ...
+}
+
+This means:
+
+“Find a figure inside the element whose ID is projects.”
+
+We'll eventually learn much more powerful selector combinations.
+
+But I want you to notice something important about the project's CSS:
+
+#hero #details h1
+
+This is telling CSS to follow a path through the HTML structure.
+
+It's essentially saying:
+
+Find the h1 inside #details, which is inside #hero.
+
+This is called descendant selection.
+
+17:00–18:15 — INHERITANCE AND THE CASCADE
+
+[SCREEN: Demonstrate body { color: #333; }.]
+
+INSTRUCTOR:
+
+Here's another concept that beginners often find confusing:
+
+Why did this element suddenly get this color when I didn't style it directly?
+
+The answer is often inheritance.
+
+For example:
+
+body {
+    color: #333;
+}
+
+Many text elements inside the body can inherit that color.
+
+So if we have:
+
+<body>
+    <section>
+        <h2>Hello</h2>
+        <p>Welcome</p>
+    </section>
+</body>
+
+we don't necessarily need to set the color on every single element.
+
+The children can inherit certain properties from their parents.
+
+Then we have the cascade.
+
+CSS stands for Cascading Style Sheets.
+
+When multiple rules could potentially style the same element, the browser has rules for deciding which declaration wins.
+
+This is why things like selector specificity, source order and inheritance matter.
+
+We're going to dedicate the next lesson to this because it becomes extremely important once our stylesheet gets larger.
+
+18:15–19:15 — HTML + CSS AS A TEAM
+
+[SCREEN: Split screen — HTML on left, CSS on right.]
+
+INSTRUCTOR:
+
+At this point, I want you to stop thinking of HTML and CSS as two completely separate subjects.
+
+They're working together.
+
+For example, our HTML says:
+
+<section id="services">
+
+And CSS can say:
+
+#services {
+    ...
+}
+
+HTML says:
+
+<div class="container">
+
+CSS says:
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+}
+
+HTML provides the structure.
+
+CSS provides the presentation and layout.
+
+And as we move through this project, you'll see this relationship again and again.
+
+19:15–20:00 — OUTRO / WHAT COMES NEXT
+
+[SCREEN: Show the finished website again.]
+
+INSTRUCTOR:
+
+So in this lesson, we've established the foundation.
+
+We revisited HTML structure.
+
+We looked at semantic elements.
+
+We learned the difference between elements and attributes.
+
+We introduced IDs and classes.
+
+We connected an external stylesheet.
+
+We looked at CSS selectors, declarations and properties.
+
+We introduced the universal selector, CSS variables, inheritance and the cascade.
+
+But we haven't really started making the website beautiful yet.
+
+That's coming.
+
+In the next video, we're going to go much deeper into one of the most important parts of CSS:
+
+selectors, specificity, the cascade and inheritance.
+
+Because once your stylesheet becomes this large, you need to understand not just how to write CSS...
+
+but why the browser chooses one CSS rule over another.
+
+And once you understand that, debugging CSS becomes dramatically easier.
+
+Let's continue.
