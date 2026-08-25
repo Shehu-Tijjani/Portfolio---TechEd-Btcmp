@@ -5,12 +5,12 @@
   --blue-lightest: rgba(0, 0, 255, 0.03);
   --blue-gradient: linear-gradient(
     to top right,
-    blue 40%,
-    rgba(0, 0, 255, 0.4)
+    var(--blue) 40%,
+    var(--blue-light) 100%
   );
-  --white: white;
-  --black: black;
 }
+
+/*  */
 
 * {
   margin: 0;
@@ -99,7 +99,7 @@ nav {
   left: 0;
   width: 100vw;
   z-index: 3;
-  background-color: var(--white);
+  background-color: white;
   box-shadow: 0 0 25px 3;
 }
 
@@ -325,7 +325,7 @@ nav .container ul li a:hover::before {
 
 #hero #details #btn-wrapper .btn:first-of-type {
   background-image: var(--blue-gradient);
-  color: var(--white);
+  color: white;
   font-weight: 500;
 }
 
@@ -505,7 +505,7 @@ nav .container ul li a:hover::before {
   border: 15px solid var(--blue-lightest);
   outline: 1px solid var(--blue-lighter);
   outline-offset: -15px;
-  background-color: var(--white);
+  background-color: white;
 
   scroll-snap-align: center;
 }
@@ -537,8 +537,6 @@ nav .container ul li a:hover::before {
   display: grid;
   row-gap: 20px;
   column-gap: 40px;
-  /* grid-template-columns: repeat(auto-fit, minmax(calc(300px + 11%), 1fr)); */
-
   grid-template-columns: repeat(auto-fit, minmax(calc(250px + 15%), 1fr));
 
   font-weight: 600;
@@ -682,7 +680,7 @@ nav .container ul li a:hover::before {
 #testimonials {
   position: relative;
 
-  background-color: var(--white);
+  background-color: white;
 }
 
 #testimonials #slider {
@@ -733,7 +731,6 @@ nav .container ul li a:hover::before {
 }
 
 #testimonials #slider #track figure .rating span {
-  /* color: transparent; */
   font-size: 25px;
   color: rgb(216, 216, 18);
 }
@@ -797,7 +794,7 @@ footer #top h3 {
 
 footer #top .btn {
   flex: 1 0 max-content;
-  color: var(--white);
+  color: white;
 }
 
 footer #top h3 span {
@@ -833,7 +830,7 @@ footer #middle #left #socials {
 
 footer #middle #left #socials a {
   background-color: var(--blue);
-  color: var(--white);
+  color: white;
   padding: 5px;
   border-radius: 3px;
   line-height: 0;
@@ -842,7 +839,7 @@ footer #middle #left #socials a {
 }
 
 footer #middle #left #socials a:hover {
-  background-color: var(--white);
+  background-color: white;
   color: var(--blue);
   outline: 1px solid var(--blue);
 }
@@ -909,7 +906,7 @@ footer #middle #news-mail #icon {
   display: inline-block;
   border: none;
   background-image: var(--blue-gradient);
-  color: var(--white);
+  color: white;
   padding: 10px;
   border-radius: 5px;
   line-height: 0;
