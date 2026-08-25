@@ -1,7 +1,7 @@
 :root {
   --blue: blue;
   --blue-light: rgba(0, 0, 255, 0.4);
-  --blue-lighter: rgba(0, 0, 255, 0.07);
+  --blue-lighter: rgba(0, 0, 255, 0.1);
   --blue-lightest: rgba(0, 0, 255, 0.03);
   --blue-gradient: linear-gradient(
     to top right,
@@ -624,7 +624,7 @@ nav .container ul li a:hover::before {
   background-position: center;
   overflow: hidden;
   margin-bottom: 20px;
-  background: linear-gradient(to bottom, var(--blue-light) 60%, white 100%);
+  background: linear-gradient(to bottom, var(--blue-lighter) 60%, white 100%);
 }
 
 #projects figure .image img {
@@ -780,7 +780,7 @@ footer #top {
   flex-wrap: wrap;
   column-gap: 30px;
   row-gap: 5px;
-  border-bottom: 1px solid var(--blue-light);
+  border-bottom: 1px solid var(--blue-lighter);
   padding-bottom: 30px;
 }
 
